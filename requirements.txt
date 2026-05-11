@@ -1,6 +1,13 @@
 python-telegram-bot==21.6
 groq
 supabase
-
+apscheduler==3.11.0
+duckduckgo-search
+yt-dlp
+requests
+pillow
+python-dotenv
+gotrue
+httpx>=0.26,<0.29
 
 
