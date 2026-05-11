@@ -1,6 +1,6 @@
 python-telegram-bot==20.7
 groq==0.8.0
-supabase==2.4.0
+supabase>=2.5.1
 apscheduler==3.10.4
 duckduckgo-search==5.1.0
 yt-dlp==2024.04.09
