@@ -9,5 +9,3 @@ pillow
 python-dotenv
 gotrue
 httpx>=0.26,<0.29
-
-
