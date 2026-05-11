@@ -156,7 +156,7 @@ async def ask_groq(user_id, user_text, image_url=None):
         return reply
     except Exception as e:
         logger.error(f"Groq Error: {e}")
-        return "Sorry dost, brain-e ektu pressure porchhe. Porer bar try kor! ð"
+        return "Sorry dost, brain-e ektu pressure porchhe. Porer bar try kor! Ã°ÂÂÂ"
 
 # --- Feature Implementations ---
 
@@ -190,17 +190,17 @@ async def web_search(query):
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
-        [InlineKeyboardButton("ð¤ Creator", callback_data='creator'), InlineKeyboardButton("ð¤ Info", callback_data='info')],
-        [InlineKeyboardButton("ð Search", callback_data='search_mode'), InlineKeyboardButton("ð¨ Generate Image", callback_data='image_mode')],
-        [InlineKeyboardButton("ð Set Reminder", callback_data='reminder_mode')]
+        [InlineKeyboardButton("Ã°ÂÂÂ¤ Creator", callback_data='creator'), InlineKeyboardButton("Ã°ÂÂ¤Â Info", callback_data='info')],
+        [InlineKeyboardButton("Ã°ÂÂÂ Search", callback_data='search_mode'), InlineKeyboardButton("Ã°ÂÂÂ¨ Generate Image", callback_data='image_mode')],
+        [InlineKeyboardButton("Ã°ÂÂÂ Set Reminder", callback_data='reminder_mode')]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     
     welcome_text = (
-        "â¨ **MOJO AI is Online!** â¨\n\n"
-        "à¦à¦®à¦¿ MOJO, à¦à¦ªà¦¨à¦¾à¦° à¦¸à§à¦®à¦¾à¦°à§à¦ à¦à¦à¦ à¦¬à¦¨à§à¦§à§à¥¤\n"
-        "à¦à¦®à¦¿ à¦à¦à¦¨ à¦à¦°à¦ à¦¶à¦à§à¦¤à¦¿à¦¶à¦¾à¦²à§! à¦à¦®à¦¿ à¦­à§à§à¦¸ à¦®à§à¦¸à§à¦ à¦¬à§à¦à¦¿, à¦à¦¬à¦¿ à¦¬à¦¾à¦¨à¦¾à¦¤à§ à¦ªà¦¾à¦°à¦¿, à¦à¦¨à§à¦à¦¾à¦°à¦¨à§à¦ à¦¸à¦¾à¦°à§à¦ à¦à¦°à¦¤à§ à¦ªà¦¾à¦°à¦¿ à¦à¦¬à¦ à¦à¦°à¦ à¦à¦¨à§à¦ à¦à¦¿à¦à§à¥¤\n\n"
-        "à¦¨à¦¿à¦à§à¦° à¦¬à¦¾à¦à¦¨à¦à§à¦²à§ à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦à¦°à§à¦¨ à¦à¦¥à¦¬à¦¾ à¦¸à¦°à¦¾à¦¸à¦°à¦¿ à¦à¦¥à¦¾ à¦¬à¦²à§à¦¨à¥¤"
+        "Ã¢ÂÂ¨ **MOJO AI is Online!** Ã¢ÂÂ¨\n\n"
+        "Ã Â¦ÂÃ Â¦Â®Ã Â¦Â¿ MOJO, Ã Â¦ÂÃ Â¦ÂªÃ Â¦Â¨Ã Â¦Â¾Ã Â¦Â° Ã Â¦Â¸Ã Â§ÂÃ Â¦Â®Ã Â¦Â¾Ã Â¦Â°Ã Â§ÂÃ Â¦Â Ã Â¦ÂÃ Â¦ÂÃ Â¦Â Ã Â¦Â¬Ã Â¦Â¨Ã Â§ÂÃ Â¦Â§Ã Â§ÂÃ Â¥Â¤\n"
+        "Ã Â¦ÂÃ Â¦Â®Ã Â¦Â¿ Ã Â¦ÂÃ Â¦ÂÃ Â¦Â¨ Ã Â¦ÂÃ Â¦Â°Ã Â¦Â Ã Â¦Â¶Ã Â¦ÂÃ Â§ÂÃ Â¦Â¤Ã Â¦Â¿Ã Â¦Â¶Ã Â¦Â¾Ã Â¦Â²Ã Â§Â! Ã Â¦ÂÃ Â¦Â®Ã Â¦Â¿ Ã Â¦Â­Ã Â§ÂÃ Â§ÂÃ Â¦Â¸ Ã Â¦Â®Ã Â§ÂÃ Â¦Â¸Ã Â§ÂÃ Â¦Â Ã Â¦Â¬Ã Â§ÂÃ Â¦ÂÃ Â¦Â¿, Ã Â¦ÂÃ Â¦Â¬Ã Â¦Â¿ Ã Â¦Â¬Ã Â¦Â¾Ã Â¦Â¨Ã Â¦Â¾Ã Â¦Â¤Ã Â§Â Ã Â¦ÂªÃ Â¦Â¾Ã Â¦Â°Ã Â¦Â¿, Ã Â¦ÂÃ Â¦Â¨Ã Â§ÂÃ Â¦ÂÃ Â¦Â¾Ã Â¦Â°Ã Â¦Â¨Ã Â§ÂÃ Â¦Â Ã Â¦Â¸Ã Â¦Â¾Ã Â¦Â°Ã Â§ÂÃ Â¦Â Ã Â¦ÂÃ Â¦Â°Ã Â¦Â¤Ã Â§Â Ã Â¦ÂªÃ Â¦Â¾Ã Â¦Â°Ã Â¦Â¿ Ã Â¦ÂÃ Â¦Â¬Ã Â¦Â Ã Â¦ÂÃ Â¦Â°Ã Â¦Â Ã Â¦ÂÃ Â¦Â¨Ã Â§ÂÃ Â¦Â Ã Â¦ÂÃ Â¦Â¿Ã Â¦ÂÃ Â§ÂÃ Â¥Â¤\n\n"
+        "Ã Â¦Â¨Ã Â¦Â¿Ã Â¦ÂÃ Â§ÂÃ Â¦Â° Ã Â¦Â¬Ã Â¦Â¾Ã Â¦ÂÃ Â¦Â¨Ã Â¦ÂÃ Â§ÂÃ Â¦Â²Ã Â§Â Ã Â¦Â¬Ã Â§ÂÃ Â¦Â¯Ã Â¦Â¬Ã Â¦Â¹Ã Â¦Â¾Ã Â¦Â° Ã Â¦ÂÃ Â¦Â°Ã Â§ÂÃ Â¦Â¨ Ã Â¦ÂÃ Â¦Â¥Ã Â¦Â¬Ã Â¦Â¾ Ã Â¦Â¸Ã Â¦Â°Ã Â¦Â¾Ã Â¦Â¸Ã Â¦Â°Ã Â¦Â¿ Ã Â¦ÂÃ Â¦Â¥Ã Â¦Â¾ Ã Â¦Â¬Ã Â¦Â²Ã Â§ÂÃ Â¦Â¨Ã Â¥Â¤"
     )
     await update.message.reply_text(welcome_text, reply_markup=reply_markup, parse_mode="Markdown")
 
@@ -209,19 +209,19 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.answer()
     
     if query.data == 'creator':
-        await query.edit_message_text("ð¤ **Creator:** Abu Bakar Riyad\nWP: [01328446336](https://wa.me/8801328446336)", parse_mode="Markdown")
+        await query.edit_message_text("Ã°ÂÂÂ¤ **Creator:** Abu Bakar Riyad\nWP: [01328446336](https://wa.me/8801328446336)", parse_mode="Markdown")
     elif query.data == 'info':
-        await query.edit_message_text("ð¤ **MOJO AI v2.0**\nCreated: 7 May 2026\nPowered by: AR Technology Limited", parse_mode="Markdown")
+        await query.edit_message_text("Ã°ÂÂ¤Â **MOJO AI v2.0**\nCreated: 7 May 2026\nPowered by: AR Technology Limited", parse_mode="Markdown")
     elif query.data == 'search_mode':
-        await query.message.reply_text("ð Please type `/search <your query>` to search the web.")
+        await query.message.reply_text("Ã°ÂÂÂ Please type `/search <your query>` to search the web.")
     elif query.data == 'image_mode':
-        await query.message.reply_text("ð¨ Please type `/draw <your prompt>` to generate an image.")
+        await query.message.reply_text("Ã°ÂÂÂ¨ Please type `/draw <your prompt>` to generate an image.")
     elif query.data == 'reminder_mode':
-        await query.message.reply_text("ð Please type `/remind <time in minutes> <message>` to set a reminder.")
+        await query.message.reply_text("Ã°ÂÂÂ Please type `/remind <time in minutes> <message>` to set a reminder.")
 
 async def send_reminder(context: ContextTypes.DEFAULT_TYPE):
     job = context.job
-    await context.bot.send_message(chat_id=job.chat_id, text=f"ð **Reminder:** {job.data}")
+    await context.bot.send_message(chat_id=job.chat_id, text=f"Ã°ÂÂÂ **Reminder:** {job.data}")
 
 async def handle_voice(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
@@ -239,7 +239,7 @@ async def handle_voice(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 response_format="text",
             )
         reply = await ask_groq(user_id, f"[Voice Message Transcribed]: {transcription}")
-        await update.message.reply_text(f"ð¤ *You said:* {transcription}\n\nð¤ {reply}", parse_mode="Markdown")
+        await update.message.reply_text(f"Ã°ÂÂÂ¤ *You said:* {transcription}\n\nÃ°ÂÂ¤Â {reply}", parse_mode="Markdown")
     except Exception as e:
         logger.error(f"Voice Error: {e}")
         await update.message.reply_text("Sorry, I couldn't process the voice message.")
@@ -282,7 +282,7 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
         reply = await ask_groq(user_id, prompt)
     elif user_text.startswith("/draw "):
         prompt = user_text.replace("/draw ", "")
-        await update.message.reply_text("ð¨ Generating your image, please wait...")
+        await update.message.reply_text("Ã°ÂÂÂ¨ Generating your image, please wait...")
         img_data = await generate_image(prompt)
         if img_data:
             await update.message.reply_photo(photo=io.BytesIO(img_data), caption=f"Here is your image for: {prompt}")
@@ -295,12 +295,12 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
             minutes = int(parts[1])
             msg = parts[2]
             context.job_queue.run_once(send_reminder, minutes * 60, data=msg, chat_id=chat_id, user_id=user_id)
-            reply = f"â Reminder set for {minutes} minutes from now."
+            reply = f"Ã¢ÂÂ Reminder set for {minutes} minutes from now."
         except:
             reply = "Usage: `/remind <minutes> <message>`"
     elif user_text.startswith("/dl "):
         url = user_text.replace("/dl ", "")
-        await update.message.reply_text("â³ Downloading... please wait.")
+        await update.message.reply_text("Ã¢ÂÂ³ Downloading... please wait.")
         try:
             os.makedirs('downloads', exist_ok=True)
             ydl_opts = {
@@ -327,9 +327,9 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
             # Using a simple eval for math or restricted exec
             allowed_names = {"__builtins__": {}, "math": __import__("math")}
             result = eval(code, allowed_names)
-            reply = f"ð» **Result:** `{result}`"
+            reply = f"Ã°ÂÂÂ» **Result:** `{result}`"
         except Exception as e:
-            reply = f"â **Error:** `{str(e)}`"
+            reply = f"Ã¢ÂÂ **Error:** `{str(e)}`"
     else:
         reply = await ask_groq(user_id, user_text)
     
@@ -337,7 +337,7 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # --- Main Entry ---
 
-async def daily_summary(context: ContextTypes.DEFAULT_TYPE):
+async def daily_summary(app):
     logger.info("Running daily summary task...")
     try:
         # Fetch all user IDs from the history table
@@ -348,7 +348,7 @@ async def daily_summary(context: ContextTypes.DEFAULT_TYPE):
             # For simplicity, we'll just send a generic daily summary message.
             # In a real application, you'd summarize their actual daily interactions.
             try:
-                await context.bot.send_message(chat_id=int(user_id), text="Good evening! Here's your daily summary from MOJO AI. Stay tuned for more updates!")
+                await app.bot.send_message(chat_id=int(user_id), text="Good evening! Here's your daily summary from MOJO AI. Stay tuned for more updates!")
                 logger.info(f"Sent daily summary to user {user_id}")
             except Exception as e:
                 logger.error(f"Failed to send daily summary to user {user_id}: {e}")
@@ -370,7 +370,8 @@ async def main():
     app.add_handler(MessageHandler(filters.PHOTO | filters.Document.PDF | filters.Document.IMAGE, handle_document))
     
     # Start Scheduler
-    scheduler.add_job(daily_summary, 'cron', hour=23, minute=59)
+    # We need to pass the context to the daily_summary function
+    scheduler.add_job(daily_summary, 'cron', hour=23, minute=59, args=[app])
     scheduler.start()
     
     async with app:
