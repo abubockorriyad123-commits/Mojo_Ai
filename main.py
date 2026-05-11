@@ -1,6 +1,10 @@
 import os
 import logging
 import asyncio
+from dotenv import load_dotenv
+
+# Load environment variables from .env file if it exists
+load_dotenv()
 import threading
 import json
 import time
@@ -298,11 +302,20 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
         url = user_text.replace("/dl ", "")
         await update.message.reply_text("â³ Downloading... please wait.")
         try:
-            ydl_opts = {'format': 'best', 'outtmpl': 'downloads/%(id)s.%(ext)s', 'max_filesize': 50*1024*1024}
+            os.makedirs('downloads', exist_ok=True)
+            ydl_opts = {
+                'format': 'best',
+                'outtmpl': 'downloads/%(id)s.%(ext)s',
+                'max_filesize': 50*1024*1024,
+                'noplaylist': True,
+                'quiet': True,
+                'no_warnings': True,
+            }
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 info = ydl.extract_info(url, download=True)
                 filename = ydl.prepare_filename(info)
-                await update.message.reply_document(document=open(filename, 'rb'))
+                with open(filename, 'rb') as f:
+                    await update.message.reply_document(document=io.BytesIO(f.read()), filename=os.path.basename(filename))
                 os.remove(filename)
                 return
         except Exception as e:
