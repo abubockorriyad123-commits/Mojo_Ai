@@ -8,4 +8,5 @@ requests==2.31.0
 pillow>=11.2.1
 python-dotenv==1.0.1
 gotrue==2.12.4
-httpx==0.25.2
+
+httpx>=0.26,<0.29
